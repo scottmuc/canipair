@@ -16,11 +16,11 @@ resources:
 
 jobs:
 - name: deploy
+  serial: true
   plan:
   - get: git-repository
     trigger: true
   - put: pez-pcf-beta
     params:
-      manifest: git-repository/manifest.yml
       environment_variables:
         SLACK_API_TOKEN: ((slack_api_token))
