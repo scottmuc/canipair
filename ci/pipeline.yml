@@ -9,7 +9,7 @@ resources:
   source:
     api: https://api.run.pcfbeta.io
     username: smuc-ci
-    password: uZo3rpMkyglo75P
+    password: ((smuc_ci_password))
     organization: pivot-smuc
     space: development
     skip_cert_check: false
