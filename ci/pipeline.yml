@@ -1,0 +1,25 @@
+resources:
+- name: git-repository
+  type: git
+  source:
+    uri: https://github.com/scottmuc/canipair.git
+
+- name: pez-pcf-beta
+  type: cf
+  source:
+    api: https://api.run.pcfbeta.io
+    username: smuc-ci
+    password: uZo3rpMkyglo75P
+    organization: pivot-smuc
+    space: development
+    skip_cert_check: false
+
+jobs:
+- name: deploy
+  plan:
+  - get: git-repository
+  - put: pez-pcf-beta
+    params:
+      manifest: git-repository/manifest.yml
+      environment_variables:
+        SLACK_API_KEY: "xoxb-317673242770-8n7sxh3L9TXFwTaobnPvzyXh"

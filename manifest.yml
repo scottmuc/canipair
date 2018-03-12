@@ -1,0 +1,7 @@
+---
+applications:
+  - name: can-i-pair
+    no-route: true
+    env:
+      GOVERSION: go1.9
+      GOPACKAGENAME: github.com/scottmuc/canipair
