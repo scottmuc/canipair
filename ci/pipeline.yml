@@ -18,8 +18,9 @@ jobs:
 - name: deploy
   plan:
   - get: git-repository
+    trigger: true
   - put: pez-pcf-beta
     params:
       manifest: git-repository/manifest.yml
       environment_variables:
-        SLACK_API_KEY: "xoxb-317673242770-8n7sxh3L9TXFwTaobnPvzyXh"
+        SLACK_API_TOKEN: ((slack_api_token))
