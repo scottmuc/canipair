@@ -1,6 +1,7 @@
 ---
 applications:
   - name: can-i-pair
+    health-check-type: process
     no-route: true
     env:
       GOVERSION: go1.9
